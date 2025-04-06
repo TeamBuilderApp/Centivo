@@ -1,9 +1,11 @@
 # Centivo Coding Challenge.
 
-A simple admin panel that manages user data for the Centivo take-home test. Uses HTTP Web API methods, GET, POST, PUT, and DELETE to manage users. Made using Node.js Express API that connects to a MongoDB database and retrieves user data.
+A simple Node.js Express API that connects to a MongoDB database and retrieves user data.
+
+Admin panel that manages user data for the Centivo take-home test. Uses HTTP Web API methods, GET, POST, PUT, and DELETE to manage users. Made using Node.js Express API that connects to a MongoDB database and retrieves user data.
 
 
-To run this app:
+Instructions:
 1) Place the connection string in routes/users.js (I will send it to you).
 2) Open a terminal and cd to this project folder. \Centivo
 3) Run the command npm start.
