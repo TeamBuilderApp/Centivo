@@ -5,12 +5,10 @@ const Users = require("../models/users.model.js");
 
 mongoose
   .connect(
-    "mongodb+srv://:@centivo.ejmjdpo.mongodb.net/users"
+    "mongodb+srv://:@centivo.ejmjdpo.mongodb.net"
   )
   .then(() => {
     console.log("Connected!");
-    //var allUsers = mongoose.getCollection("users").find({});
-    //console.log(allUsers);
   })
   .catch(() => {
     console.log("Connection failed!");
@@ -18,11 +16,25 @@ mongoose
 
 /* GET users listing. */
 router.get("/", async (req, res) => {
-  var allUsers;
   try {
-    //res.send("Connected with a GET.")
     const users = await Users.find({});
+    console.log(users);
     res.status(200).json(users);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+  //res.send("Connected to users db.")
+  //
+});
+
+/* GET user by id. */
+router.get("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    console.log("ID: " + id);
+    const user = await Users.findById(id);
+    console.log(user);
+    res.status(200).json(user);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -33,7 +45,6 @@ router.get("/", async (req, res) => {
 router.post("/create", async (req, res) => {
   try {
     console.log(req.body);
-    //res.send(req.body);
     const user = await Users.create(req.body);
     res.status(200).json(user);
   } catch (error) {
@@ -41,25 +52,32 @@ router.post("/create", async (req, res) => {
   }
 });
 
-router.put("/update", async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
-    console.log(req.body);
-    res.send(
-      "PUT: User resource for Centivo Technical Challenge. /user. Todo update a User by ID."
-    );
-    //res.send(req.body);
+    const { id } = req.params;
+    console.log("Attempting to update user by id: " + id);
+    const user = await Users.findByIdAndUpdate(id, req.body);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    const updateUser = await Users.findById(id);
+    res.status(200).json(updateUser);
+
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 });
 
-router.delete("/delete", async (req, res) => {
-  try {
-    console.log(req.body);
-    res.send(
-      "DELETE: User resource for Centivo Technical Challenge. /user. Todo delete a User by ID."
-    );
-    //res.send(req.body);
+router.delete("/:id", async (req, res) => {
+   try {
+    const { id } = req.params;
+    console.log("Attempting to delete user by id: " + id);
+    const user = await Users.findByIdAndDelete(id);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    res.status(200).json({message: "User deleted successfully"});
+    
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
