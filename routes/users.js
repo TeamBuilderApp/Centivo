@@ -42,6 +42,19 @@ router.get("/:id", async (req, res) => {
   //
 });
 
+/* GET users Unique twist: Only return users where the age is greater than 21 listing. */
+router.get("/age/over21", async (req, res) => {
+  try {
+    const users = await Users.find({ age: { $gt: 21} });
+    console.log(users);
+    res.status(200).json(users);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+  //res.send("Connected to users db.")
+  //
+});
+
 router.post("/create", async (req, res) => {
   try {
     console.log(req.body);
