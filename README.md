@@ -34,7 +34,7 @@ Note that, a collection in MongoDB is the same as a table in MySQL.
 Create a collection called "users".
 To create a collection in MongoDB, we can use the createCollection() method.
 Run:
-node createUsersCollection.js
+node createusers.js
 
 
 Sample MongoDB Schema:
