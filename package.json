@@ -18,7 +18,7 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TeamBuilderApp/Take-Home-Technical-Challenge-NodeJs-API-MongoDB.git"
+    "url": "git+https://github.com/TeamBuilderApp/Centivo.git"
   },
   "keywords": [
     "Node",
@@ -29,7 +29,7 @@
   "author": "Christopher Witalis Peterson",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TeamBuilderApp/Take-Home-Technical-Challenge-NodeJs-API-MongoDB/issues"
+    "url": "https://github.com/TeamBuilderApp/Centivo/issues"
   },
-  "homepage": "https://github.com/TeamBuilderApp/Take-Home-Technical-Challenge-NodeJs-API-MongoDB#readme"
+  "homepage": "https://github.com/TeamBuilderApp/Centivo/#readme"
 }
