@@ -9,5 +9,5 @@ db.getCollection("users").findOne({
     "_id" : ObjectId("68f23c467907f5997125175d")
 });
 
-db.getCollection("users").find({
-});
+/*db.getCollection("users").find({
+});*/

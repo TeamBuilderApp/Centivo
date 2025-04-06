@@ -12,6 +12,7 @@
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "mongodb": "^6.15.0",
+    "moongoose": "^0.0.5",
     "morgan": "~1.9.1"
   },
   "description": "Centivo Take Home Challenge MongoDB Node.js Express API.",

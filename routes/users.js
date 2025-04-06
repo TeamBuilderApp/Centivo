@@ -1,9 +1,19 @@
 var express = require('express');
 var router = express.Router();
+var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://localhost:27017/";
+
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('GET user resource for Centivo Technical Challenge /users list.');
+  var allUsers;
+MongoClient.connect(url, function(err, db) {   //here db is the client obj
+  console.log("attempting to connect to users.");
+
+  db.close();   //close method has also been moved to client obj
+});
+res.send("Connected to users db.")
+  //var allUsers = db.getCollection("users").find({});
 });
 
 router.post('/create', function(req, res, next) {
