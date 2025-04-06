@@ -1,11 +1,11 @@
 var express = require("express");
 var router = express.Router();
 const mongoose = require("mongoose");
-const Users = require("../models/users.model.js");
+const Users = require("../models/userInfo.model.js");
 
 mongoose
   .connect(
-    "mongodb+srv://:@centivo.ejmjdpo.mongodb.net"
+    "mongodb+srv://:@centivo.ejmjdpo.mongodb.net/Centivo"
   )
   .then(() => {
     console.log("Connected!");
