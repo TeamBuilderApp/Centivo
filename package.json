@@ -11,11 +11,11 @@
     "express": "~4.20.0",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
+    "mongodb": "^6.15.0",
     "morgan": "~1.9.1"
   },
   "description": "Centivo Take Home Challenge MongoDB Node.js Express API.",
   "main": "app.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TeamBuilderApp/Take-Home-Technical-Challenge-NodeJs-API-MongoDB.git"
