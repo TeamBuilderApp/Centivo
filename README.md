@@ -6,7 +6,7 @@ Admin panel that manages user data for the Centivo take-home test. Uses HTTP Web
 
 
 Instructions:
-1) Place the connection string in routes/users.js (I will send it to you).
+1) (Note: No longer need to modify the connection string, switched to localhost). Place the connection string in routes/users.js (I have added it for you).
 2) Open a terminal and cd to this project folder. \Centivo
 3) Run the command npm start.
 2) Run Postman or your browser and run the following URLs for each HTTP call:

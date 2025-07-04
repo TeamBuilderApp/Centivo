@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const Users = require("../models/userInfo.model.js");
 
 mongoose
-  .connect("mongodb+srv://:@centivo.ejmjdpo.mongodb.net/Centivo")
+  .connect("mongodb://localhost:27017/local?directConnection=true")
   .then(() => {
     console.log("Connected!");
   })

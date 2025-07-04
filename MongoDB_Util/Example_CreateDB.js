@@ -2,7 +2,7 @@
 var MongoClient = require('mongodb').MongoClient;
 
 //Creates the Users Mongo Database. 
-var url = "mongodb://localhost:27017/Users_MongoDB";
+var url = "mongodb://localhost:27017/users?directConnection=true";
 
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
