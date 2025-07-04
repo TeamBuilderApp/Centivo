@@ -77,7 +77,8 @@ router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
     console.log("Attempting to update user by id: " + id);
-    const user = await Users.findByIdAndUpdate(id, req.body);
+    const updateData = req.body; // Extract user input
+    const user = await Users.findByIdAndUpdate(id, { $set: updateData });
 
     //Returns a 404 Not Found response if the user is not found
     if (!user) {
